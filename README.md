@@ -1,73 +1,56 @@
-# React + TypeScript + Vite
+# Envato Seller Landing Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Modern single–page experience for onboarding Envato sellers. The page is built with **React 18 + TypeScript + Vite**, styled with **Tailwind CSS**, and animated with **Framer Motion**.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Hero with looping preview videos and CTA buttons that smooth-scroll to the application form.
+- “Why Sell” section with icon cards highlighting platform benefits.
+- Step-by-step “How to become a seller” visualization that references `apply.png`.
+- Earnings breakdown cards outlining subscription, enterprise, and marketplace revenue shares.
+- Interactive content category selector that updates details per discipline.
+- Testimonials grid for social proof.
+- Application form with validation, portfolio upload slot, and status messaging.
+- Sticky, blurred navbar with responsive link list for quick navigation.
+- Final CTA banner to drive conversions.
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React 18 + Vite
+- TypeScript
+- Tailwind CSS
+- Framer Motion (section + media animations)
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+```bash
+# install dependencies
+npm install
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+# start dev server
+npm run dev
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# build for production
+npm run build
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Visit `http://localhost:5173` during development.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## File Structure Highlights
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- `src/App.tsx` – mounts the sticky `Navbar` plus the seller page.
+- `src/SellerPage/Navbar.tsx` – sticky top navigation with smooth-scroll links.
+- `src/SellerPage/Hero.tsx` – full landing page implementation (all sections + form).
+- `src/assets/apply.png` – hero artwork used in the process section.
+- `src/components/ui/button.tsx` – shared button primitive used across CTAs.
+
+## Customisation Tips
+
+- Update videos, colors, and copy inside `Hero.tsx`.
+- Adjust navigation links or add extra sections via `Navbar.tsx`.
+- Tailwind classes govern spacing/typography; tweak the theme in `tailwind.config.*` if present.
+- Hook the application form to a backend or service by replacing the placeholder submit handler.
+
+## Deployment
+
+The build output is generated in `dist/`. Deploy the folder to any static host (Vercel, Netlify, Cloudflare Pages, etc.). Make sure environment variables for future APIs are configured through Vite’s `import.meta.env` pattern.

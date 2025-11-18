@@ -1,10 +1,11 @@
-import { Button } from "@/components/ui/button"
+import Navbar from "./SellerPage/Navbar"
+import EnvatoAuthorContent from "./SellerPage/Hero"
 
 function App() {
   return (
-    <div className="flex min-h-svh flex-col items-center justify-center">
-      <Button>Click me</Button>
-      <h1 className="text-3xl">Ggs</h1>
+    <div className="min-h-screen bg-black text-slate-100">
+      <Navbar />
+      <EnvatoAuthorContent />
     </div>
   )
 }
