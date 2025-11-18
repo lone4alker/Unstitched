@@ -1,11 +1,11 @@
 import Navbar from "./SellerPage/Navbar"
-import EnvatoAuthorContent from "./SellerPage/Hero"
+import MainSection from "./SellerPage/Hero"
 
 function App() {
   return (
     <div className="min-h-screen bg-black text-slate-100">
       <Navbar />
-      <EnvatoAuthorContent />
+      <MainSection />
     </div>
   )
 }

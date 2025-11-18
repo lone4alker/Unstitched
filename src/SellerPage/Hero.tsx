@@ -18,7 +18,7 @@ const fadeInUp = {
   show: { opacity: 1, y: 0 },
 };
 
-export default function EnvatoAuthorContent() {
+export default function MainSection() {
   const [selectedCategory, setSelectedCategory] = useState(contentCategories[0]);
   const [formData, setFormData] = useState({
     name: '',
