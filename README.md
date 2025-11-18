@@ -1,4 +1,4 @@
-# Envato Seller Landing Page
+# Unstitched Seller Landing Page
 
 Modern single–page experience for onboarding Envato sellers. The page is built with **React 18 + TypeScript + Vite**, styled with **Tailwind CSS**, and animated with **Framer Motion**.
 
