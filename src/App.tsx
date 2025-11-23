@@ -1,5 +1,5 @@
 import Navbar from "./SellerPage/Navbar"
-import MainSection from "./SellerPage/Hero"
+import HeroSection from "./SellerPage/Hero"
 import HowtoBecomeSeller from "./SellerPage/ProcessSection"
 import WhySellWithUs from "./SellerPage/BenefitsSection"
 import EarningsSection from "./SellerPage/EarningSection"
@@ -12,7 +12,7 @@ function App() {
   return (
     <div className="min-h-screen bg-black text-slate-100">
       <Navbar />
-      <MainSection />
+      <HeroSection />
       <WhySellWithUs />
       <HowtoBecomeSeller />
       <EarningsSection />

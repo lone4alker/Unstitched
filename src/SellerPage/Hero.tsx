@@ -10,7 +10,7 @@ const fadeInUp = {
   show: { opacity: 1, y: 0 },
 };
 
-export default function MainSection() {
+export default function HeroSection() {
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
   };
