@@ -2,16 +2,15 @@ import { useState } from 'react';
 import type { ChangeEvent, FormEvent } from 'react';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
-import applyImg from '../assets/apply.png';
 import {
-  benefitsData,
-  sellerSteps,
   earningsCards,
   contentCategories,
   testimonialsData,
   heroStats,
   heroVideos,
 } from './data/pageContent';
+import WhySellWithUs from './BenefitsSection';
+import HowtoBecomeSeller from './ProcessSection';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -131,93 +130,12 @@ export default function MainSection() {
         </div>
       </motion.section>
 
-      {/* Why Sell */}
-      <section id="why" className="container mx-auto px-4 py-16 md:py-20">
-        <motion.div variants={fadeInUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.7 }}>
-          <div className="flex flex-col lg:flex-row justify-between items-start gap-10 mb-12">
-            <div className="lg:w-1/3">
-              <p className="text-sm uppercase tracking-[0.3em] text-emerald-300 mb-4">Why sell with us</p>
-              <h2 className="text-3xl font-semibold mb-4 text-white">Build Your Legacy. Earn on Autopilot.</h2>
-              <p className="text-slate-400">
-                Stop trading time for money. Submit your templates once and let our focused, global marketplace handle the rest—marketing, curation, and a reliable passive income stream.
-              </p>
-            </div>
-            <div className="lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-8">
-              {benefitsData.map((benefit) => (
-                <motion.div
-                  key={benefit.title}
-                  className="rounded-2xl border border-slate-800 bg-slate-900/40 p-6"
-                  whileHover={{ y: -6, borderColor: '#34d399' }}
-                >
-                  <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full bg-slate-800">{benefit.icon}</div>
-                  <h3 className="text-xl font-semibold text-white mb-2">{benefit.title}</h3>
-                  <p className="text-slate-400 text-sm">{benefit.copy}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </motion.div>
-      </section>
+      <WhySellWithUs />
 
-      {/* How to become */}
-      <section id="how" className="container mx-auto px-4 py-16 md:py-20">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-10">
-          <motion.div
-            className="lg:w-1/2 flex justify-center"
-            variants={fadeInUp}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-          >
-            <motion.img
-              src={applyImg}
-              alt="How to become an Envato Author illustration"
-              className="w-full max-w-xl drop-shadow-[0_45px_95px_rgba(16,185,129,0.25)] mix-blend-screen"
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            />
-          </motion.div>
-
-          <motion.div
-            className="lg:w-1/2 lg:pl-8"
-            variants={fadeInUp}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-          >
-            <p className="text-sm uppercase tracking-[0.3em] text-emerald-300 mb-4">How to become a seller</p>
-            <h2 className="text-3xl font-semibold text-white mb-6">Three simple steps to go live.</h2>
-            <div className="space-y-6">
-              {sellerSteps.map((step, index) => (
-                <div key={step.label} className="flex items-start gap-4">
-                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full border border-emerald-400/40 text-lg font-semibold text-emerald-300">
-                    {index + 1}
-                  </div>
-                  <div>
-                    <div className="flex items-center gap-3">
-                      <h3 className="text-xl font-semibold text-white">{step.label}</h3>
-                      <span className="text-xs uppercase tracking-wide text-slate-400">{step.time}</span>
-                    </div>
-                    <p className="text-sm text-slate-400">{step.detail}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-            <div className="mt-8">
-              <Button className="bg-emerald-500 hover:bg-emerald-400 text-black font-semibold" onClick={() => scrollToSection('apply')}>
-                Start my application
-              </Button>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      <HowtoBecomeSeller />
 
       {/* Earnings */}
-      <section id="earnings" className="container mx-auto px-4 py-16 md:py-20">
+      <section id="earnings" className="container mx-auto px-4 py-8 md:py-12">
         <motion.div variants={fadeInUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.7 }}>
           <div className="text-center mb-12">
             <p className="text-sm uppercase tracking-[0.3em] text-emerald-300 mb-3">Earnings breakdown</p>
@@ -243,7 +161,7 @@ export default function MainSection() {
       </section>
 
       {/* Content categories */}
-      <section id="content" className="container mx-auto px-4 py-16 md:py-20">
+      <section id="content" className="container mx-auto px-4 py-8 md:py-12">
         <motion.div variants={fadeInUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.7 }}>
           <div className="text-center mb-12">
             <p className="text-sm uppercase tracking-[0.3em] text-emerald-300 mb-3">Content type selection</p>
@@ -268,7 +186,7 @@ export default function MainSection() {
           </div>
           <motion.div
             key={selectedCategory.name}
-            className={`rounded-3xl border border-slate-800 bg-gradient-to-br ${selectedCategory.accent} p-8`}
+            className={`rounded-3xl border border-slate-800 bg-linear-to-br ${selectedCategory.accent} p-8`}
             initial={{ opacity: 0.3, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -299,7 +217,7 @@ export default function MainSection() {
       </section>
 
       {/* Testimonials */}
-      <section id="testimonials" className="container mx-auto px-4 py-16 md:py-20">
+      <section id="testimonials" className="container mx-auto px-4 py-8 md:py-12">
         <motion.div variants={fadeInUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.7 }}>
           <div className="text-center mb-12">
             <p className="text-sm uppercase tracking-[0.3em] text-emerald-300 mb-3">Creator stories</p>
@@ -327,7 +245,7 @@ export default function MainSection() {
       </section>
 
       {/* Application form */}
-      <section id="apply" className="container mx-auto px-4 py-16 md:py-24">
+      <section id="apply" className="container mx-auto px-4 py-8 md:py-16">
         <motion.div
           className="rounded-3xl border border-slate-800 bg-slate-900/60 p-10"
           variants={fadeInUp}
@@ -438,9 +356,9 @@ export default function MainSection() {
       </section>
 
       {/* Final CTA */}
-      <section className="container mx-auto px-4 pb-24">
+      <section className="container mx-auto px-4 pb-12">
         <motion.div
-          className="rounded-3xl bg-gradient-to-r from-emerald-500 to-cyan-500 px-8 py-12 text-center text-black"
+          className="rounded-3xl bg-linear-to-r from-emerald-500 to-cyan-500 px-8 py-12 text-center text-black"
           variants={fadeInUp}
           initial="hidden"
           whileInView="show"
