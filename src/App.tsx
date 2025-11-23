@@ -1,11 +1,25 @@
 import Navbar from "./SellerPage/Navbar"
 import MainSection from "./SellerPage/Hero"
+import HowtoBecomeSeller from "./SellerPage/ProcessSection"
+import WhySellWithUs from "./SellerPage/BenefitsSection"
+import EarningsSection from "./SellerPage/EarningSection"
+import ContentSection from "./SellerPage/ContentTypesSection"
+import Testimonials from "./SellerPage/TestimonialsSection"
+import Application from "./SellerPage/ApplicationForm"
+import CTA from "./SellerPage/CTASection"
 
 function App() {
   return (
     <div className="min-h-screen bg-black text-slate-100">
       <Navbar />
       <MainSection />
+      <WhySellWithUs />
+      <HowtoBecomeSeller />
+      <EarningsSection />
+      <ContentSection />
+      <Testimonials />
+      <Application />
+      <CTA />
     </div>
   )
 }
