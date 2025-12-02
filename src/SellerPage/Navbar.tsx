@@ -13,7 +13,7 @@ export default function Navbar() {
         <div className="flex items-center gap-6">
           <img
             src="https://static.wixstatic.com/media/b0bce6_2740448e86174dffb5a766e6bc0fc37e~mv2.png/v1/fill/w_740,h_200,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/b0bce6_2740448e86174dffb5a766e6bc0fc37e~mv2.png"
-            alt="Envato Elements Logo"
+            alt="Unstitched Elements Logo"
             className="w-48 md:w-56"
           />
         </div>
@@ -25,8 +25,6 @@ export default function Navbar() {
         >
           Apply now
         </Button>
-      </div>
-      <div className="lg:hidden border-t border-white/5">
       </div>
     </header>
   );
